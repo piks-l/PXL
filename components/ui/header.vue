@@ -6,13 +6,13 @@
 </template>
 <style lang="postcss">
   header{
-     @apply bg-green;
+     @apply bg-white;
   }
   .logo-theme{
-     @apply bg-red;
+     @apply bg-black;
   }
   .menu-theme{
-     @apply bg-blue;
+     @apply bg-white;
   }
 </style>
 <script>
