@@ -1,17 +1,20 @@
 export const state = () => ({
-  preloading: false,
-  muted: false
+    preloading: false,
+    menu: false,
+    muted: false
 })
 export const mutations = {
-    toggle(state) { state.preloading = !state.preloading },
-    mute(state) { state.muted = !state.muted }
+    tglMenu(state) {state.menu = !state.menu},
+    tglPreloading(state) {state.preloading = !state.preloading},
+    tglMuted(state) {state.muted = !state.muted}
 }
 export const actions = {
-    toggled({ commit }) { commit('toggle') },
-    muteed({ commit }) { commit('mute') }
+    actMenu({ commit }) {commit('tglMenu')},
+    actPreloading({ commit }) {commit('tglPreloading')},
+    actMuted({ commit }) {commit('tglMuted')}
 }
 export const getters = {
-    toggled(state) { return state.preloading },
-    muteed(state) { return state.muted }
-
+    getMenu(state) {return state.menu},
+    getPreloading(state) {return state.preloading},
+    getMuted(state) {return state.muted}
 }

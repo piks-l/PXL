@@ -41,24 +41,19 @@ module.exports = {
     colors: {
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
-      red: colors.red,
-      yellow: colors.amber,
-      blue: colors.blue,
-      green: colors.green,
       transparent: 'transparent',
       current: 'currentColor',
     },
     extend: {
       width: {
-        'wc': 'calc(100% - 375px)',
+        'wc': 'calc(100% - 100px)',
       },
       height: {
-        'nn': 'calc(100vh - 80px)',
-        'cart': 'calc(100% - 240px)',        
+        'nn': 'calc(100vh - 100px)',
+        'cart': 'calc(100% - 50px)',        
       },
       minHeight: {
-        'foot': 'calc(100vh - 420px)',
+        'foot': 'calc(100vh - 50px)',
       },
       lineHeight: {
       '20': '5.5rem',
@@ -80,8 +75,8 @@ module.exports = {
         '5000': '5000ms',
       },
       fontFamily: {
-        'title': ['"OPTITomasoBoldExtended"'],
-        'text': ['"OPTIVenusBoldExtended"'],
+        'garamond': ['"EB Garamond"'],
+        'english': ['"IM Fell English"'],
       }
     }
   },

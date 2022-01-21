@@ -2,24 +2,23 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   ssr: false,
   head: {
-    title: 'Electro Alternativ 2022',
+    title: 'Saåad',
     htmlAttrs: {
-      lang: 'fr'
+      lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Avec plus de 700 artistes programmés, Electro Alternativ parcourt depuis 15 ans toutes les scènes électroniques, invitant les plus grands noms de la scène internationale, nationale et locale.' },
+      { hid: 'description', name: 'description', content: 'Official website of the experimental & ambient musical project Saåad. Founded by Romain Barbot late 2009.' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'favicon.png' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&family=Yeseva+One&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=IM+Fell+English&display=swap' },
     ],
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'},
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'},
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js'},
       { src: 'https://unpkg.com/split-type'},
 
     ]
@@ -32,11 +31,11 @@ export default {
   },
 
   // Loading
-  //loading: '~/components/Loading.vue',
+  loading: '~/components/ui/preloading.vue',
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/ga.js'
+    //'~/plugins/ga.js'
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -70,14 +69,9 @@ export default {
   modules: [
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
-     ['nuxt-facebook-pixel-module', {
-      track: 'PageView',
-      pixelId: '370934850203990',
-      disabled: false
-    }]
   ],
   sitemap: {
-    hostname: 'https://electro-alternativ.com',
+    hostname: 'https://www.saaadrone.com/',
     gzip: true,
     //routes: [
       //'/lieux',
