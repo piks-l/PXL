@@ -105,12 +105,12 @@ export default {
         this.$ScrollTrigger.refresh();
     },
     toggle() {
-        this.$store.dispatch('toggled')
+        this.$store.dispatch('actPreloading')
     }
   },
   computed: {
     preloading () {
-      return this.$store.getters['toggled']
+      return this.$store.getters['getPreloading']
     },
   },
 }

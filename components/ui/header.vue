@@ -6,18 +6,46 @@
 </template>
 <style lang="postcss">
   header{
-     @apply bg-white;
+     @apply bg-black fixed top-0 left-0 w-screen h-screen flex justify-between items-center px-20 overflow-hidden;
   }
   .logo-theme{
-     @apply bg-black;
+     @apply text-white;
   }
   .menu-theme{
-     @apply bg-white;
+     @apply text-white;
   }
 </style>
 <script>
 export default {
+  methods: {
+    revealHeader() {
+      this.$gsap.to('header', {height: "50vh", duration: 1, delay:1 ,ease: 'power2'})
+    },
+    scrollHeader() {
+      let limitBottom = document.documentElement.offsetHeight - window.innerHeight;
+      let GSAP = this.$gsap;
+
+      window.addEventListener("scroll",function(){
+        if(document.documentElement.scrollTop === 0){
+          GSAP.to('header', {height: "50vh", duration: 1, delay:0 ,ease: 'power2'})
+        }
+        if(document.documentElement.scrollTop > 50 && document.documentElement.scrollTop < 60 ){
+          GSAP.to('header', {height: "100px", duration: 1, delay:0 ,ease: 'power2'})
+        }
+        if(document.documentElement.scrollTop > (limitBottom - 100) && document.documentElement.scrollTop < (limitBottom - 50) ){
+          GSAP.to('header', {height: "100px", duration: 1, delay:0 ,ease: 'power2'})
+        }
+        if(document.documentElement.scrollTop === limitBottom){
+          GSAP.to('header', {height: "0vh", duration: 1, delay:0, ease: 'power2'})
+        }
+      })
+
+    },
+  },
   mounted() {
+    this.revealHeader();
+    this.scrollHeader();
+    
     if(this.$store.state.preloading === false) {
       //console.log("Page not loaded")
     } else {
