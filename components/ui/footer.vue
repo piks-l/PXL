@@ -5,7 +5,7 @@
 </template>
 <style lang="postcss">
   footer{
-     @apply bg-green;
+     @apply bg-black;
   }
 </style>
 <script>

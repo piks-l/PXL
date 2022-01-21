@@ -8,9 +8,8 @@
     v-on:after-leave="afterLeave"
   >
     <div v-if="preloading" class="preloader">
-
       <div v-if="content">
-          <h1 class="titleload">electro  <br/>alternativ</h1>
+          <h1 class="titleload">Saåad</h1>
           <div class="preloader__progress">
             <div class="preloader__progress__bar"></div>
           </div>
@@ -82,7 +81,7 @@ export default {
     },
     enter() {
         var t1 = this.$gsap.timeline(), mySplitText = new SplitType(".titleload", {type:"words,chars"}), chars = mySplitText.chars;
-          t1.from(chars, {delay: 0, duration: .1, opacity:0, y:-50, transformPerspective:800, transformOrigin:"center", rotationY:180,  ease:"power2.inOut", stagger: 0.1}, "+=0");
+          t1.from(chars, {delay: 0, duration: .1, opacity:0, y:-50,  ease:"power2.inOut", stagger: 0.1}, "+=0");
           t1.to(chars, {delay: 0, duration: 0.1, opacity:0, y:50, transformOrigin:"0% 50% 100",  ease:"power2.inOut", stagger: 0.1}, "+=0");
 
     },
