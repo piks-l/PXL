@@ -1,0 +1,13 @@
+<svg id="pattern-ui" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px">
+    <defs>
+        <pattern id="pattern" width="40" height="40" viewBox="0 0 40,40" patternUnits="userSpaceOnUse" patternTransform="rotate(90) ">
+            <rect id="pattern-background" width="400%" height="400%" fill="rgba(247, 245, 158,1)"/>
+            <path fill="rgba(194, 191, 194,1)" d="M-10 20 v20 h20 v-20zM30 20 v20 h20v-20z"/>
+            <path fill="rgba(247, 245, 158,1)" d="M-10 20 h60 v20 h-60z"/>
+            <path fill="rgba(194, 191, 194,1)" d="M10 0 v40 h20 v-40z"/>
+            <path fill="rgba(247, 245, 158,1)" d="M-10 0 h60 v20 h-60z"/>
+            <path fill="rgba(194, 191, 194,1)" d="M-10 0 v20 h20 v-20zM30 0 v20 h20 v-20z"/>
+        </pattern>
+    </defs>
+    <rect fill="url(#pattern)" width="100%" height="100%"/>
+</svg>
