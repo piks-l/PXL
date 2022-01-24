@@ -31,7 +31,7 @@ export default {
   },
 
   // Loading
-  //loading: '~/components/ui/preloading.vue',
+  loading: '~/components/ui/preloading.vue',
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [

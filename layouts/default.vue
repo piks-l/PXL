@@ -1,6 +1,6 @@
 <template>
   <main :class="{'isDesktop': this.$device.isDesktop, 'isMobile': this.$device.isMobile, 'isTablet': this.$device.isTablet,}">
-    <Ui-header v-if="!this.$store.state.preloading" />
+    <Ui-header />
     <Nuxt v-if="!this.$store.state.preloading" />
     <Ui-footer v-if="!this.$store.state.preloading" />
   </main>
@@ -29,7 +29,7 @@
       })
       this.$nextTick(() => {
         this.$nuxt.$loading.start()
-        setTimeout(() => this.$nuxt.$loading.finish(), 4900)
+        setTimeout(() => this.$nuxt.$loading.finish(), 2500)
       })
     }
   }

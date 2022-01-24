@@ -5,7 +5,7 @@
 </template>
 <style lang="postcss">
   .logo {
-     @apply font-garamond text-[25px] leading-[100px];
+     @apply font-garamond text-[150px] leading-[100px];
   }
 </style>
 <script>
@@ -14,6 +14,10 @@ export default {
     scrollLogo() {
       let limitBottom = document.documentElement.offsetHeight - window.innerHeight;
       let GSAP = this.$gsap;
+      
+      var t1 = this.$gsap.timeline(), mySplitText = new SplitType(".logo", {type:"words,chars"}), chars = mySplitText.chars;
+        t1.from(chars, {delay: 0, duration:2.5, opacity:0, y:-50,  ease:"power2.inOut", stagger: 0.1}, "+=0");
+        t1.to(chars, {delay: 0, fontSize: '100px',duration:1,  ease:"power2.inOut", stagger: 0.1}, "+=0");
 
       window.addEventListener("scroll",function(){
         if(document.documentElement.scrollTop === 0){

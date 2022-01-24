@@ -1,69 +1,41 @@
 <template>
   <transition name="loading_transition"
-    v-on:before-enter="beforeEnter"
-    v-on:enter="enter"
-    v-on:after-enter="afterEnter"
-    v-on:before-leave="beforeLeave"
-    v-on:leave="leave"
-    v-on:after-leave="afterLeave"
+    v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:after-enter="afterEnter"
+    v-on:before-leave="beforeLeave" v-on:leave="leave" v-on:after-leave="afterLeave"
   >
     <div v-if="preloading" class="preloader">
-      <div v-if="content">
-          <h1 class="titleload">Saåad</h1>
-          <div class="preloader__progress">
-            <div class="preloader__progress__bar"></div>
-          </div>
-      </div>
+      <svg viewBox="25 25 50 50" class="circleLoading" v-if="content">
+        <circle class="loader-path" cx="50" cy="50" r="20"></circle>
+      </svg>
     </div>
   </transition>
 </template>
-<style>
-  .preloader {
-    align-items: center;
-    background: #f9f69a;
-    color: black;
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 1007!important;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    overflow:hidden;
+<style lang="postcss">
+  .preloader{
+     @apply z-[51] bg-[transparent] mx-auto fixed top-0 left-0 w-screen h-screen flex justify-between items-center px-20 overflow-hidden text-center;
   }
-  .titleload{
-    font-size:90px;
-    font-family: Orchid;
-    margin: 0px;
+  .loader-path {
+    fill: none;
+    stroke-width: 1px;
+    animation: animate-stroke 3s ease-in-out;
+    stroke-linecap: round;
   }
-  .preloader__progress {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5px;
-    overflow: hidden;
-    text-align: center;
-    width: 100%;
-    top: -112.5px;
-    position: relative;
+  .circleLoading {
+    @apply w-[350px] h-[350px] mx-auto;
   }
-  .preloader__progress__bar {
-    border-bottom: 5px solid black;
-    background: #FFFFFF;
-    color: #FFFFFF;
-    height: 0px;
-    margin:0 auto;
-    width: 100%;
-    animation: ani__06 3.4s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    transform-origin: 50% 0%;
-    background-image:url('/images/CLINDOEIL.gif');
+  @keyframes animate-stroke {
+      0% {
+          stroke-dasharray: 200, 200;
+          stroke-dashoffset: 0;
+          stroke: black;
+      }
+      100% {
+          stroke-dasharray: 200, 200;
+          stroke-dashoffset: -200;
+          stroke: white;
+      }
   }
+
 </style>
 <script>
 export default {
@@ -71,6 +43,10 @@ export default {
     content: false, // Boolean du contenu
   }),
   methods: {
+    revealHeader() {
+      console.log("revealHeader")
+      this.$gsap.to('header', {height: "50vh", duration: 1, delay:1 ,ease: 'power2'})
+    },
     start() {
         this.toggle();
         this.content = true; // Boolean du contenu = true
@@ -80,24 +56,20 @@ export default {
       // Avant de lancer la function Enter()
     },
     enter() {
-        var t1 = this.$gsap.timeline(), mySplitText = new SplitType(".titleload", {type:"words,chars"}), chars = mySplitText.chars;
-          t1.from(chars, {delay: 0, duration: .1, opacity:0, y:-50,  ease:"power2.inOut", stagger: 0.1}, "+=0");
-          t1.to(chars, {delay: 0, duration: 0.1, opacity:0, y:50, transformOrigin:"0% 50% 100",  ease:"power2.inOut", stagger: 0.1}, "+=0");
 
     },
     afterEnter() {
       // Aprés avoir lancer la function Enter()
-      this.$gsap.to(".preloader__progress", { height: 300, y: -5, ease: 'power2.inOut', duration: 0.5, delay: 3.4});
-      this.$gsap.to(".preloader__progress__bar", { height: 300, y: -5, ease: 'power2.inOut', duration: 0.5, delay: 3.4});
-      this.$gsap.to(".preloader__progress", { height: 0, y: 5, ease: 'power2.inOut', duration: 0.5, delay: 4.4});
-      this.$gsap.to(".preloader__progress__bar", { height: 0, y: 5, ease: 'power2.inOut', duration: 0.5, delay: 4.4});
+      this.$gsap.to("#circle", { y: -5, ease: 'power2.inOut', duration: 3, delay: .5});
     },
     finish() {
         this.content = false; // Boolean du contenu = false
+        this.revealHeader();
         this.toggle();
       // Fin du chargement du component loading.vue
     },
     beforeLeave() {
+        
     },
     leave() {
     },

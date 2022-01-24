@@ -1,12 +1,12 @@
 <template>
   <header>
-    <Ui-logo class="logo-theme"/>
-    <Ui-menu class="menu-theme"/>
+    <Ui-logo class="logo-theme" />
+    <Ui-menu class="menu-theme" v-if="!this.$store.state.preloading"/>
   </header>
 </template>
 <style lang="postcss">
   header{
-     @apply bg-black fixed top-0 left-0 w-screen h-screen flex justify-between items-center px-20 overflow-hidden;
+     @apply bg-black fixed top-0 left-0 w-screen h-screen flex justify-center items-center px-20 overflow-hidden;
   }
   .logo-theme{
      @apply text-white;
@@ -18,9 +18,6 @@
 <script>
 export default {
   methods: {
-    revealHeader() {
-      this.$gsap.to('header', {height: "50vh", duration: 1, delay:1 ,ease: 'power2'})
-    },
     scrollHeader() {
       let limitBottom = document.documentElement.offsetHeight - window.innerHeight;
       let GSAP = this.$gsap;
@@ -43,7 +40,6 @@ export default {
     },
   },
   mounted() {
-    this.revealHeader();
     this.scrollHeader();
     
     if(this.$store.state.preloading === false) {
