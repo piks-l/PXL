@@ -5,6 +5,7 @@
   >
     <div v-if="preloading" class="preloader">
       <svg viewBox="25 25 50 50" class="circleLoading" v-if="content">
+        
         <circle class="loader-path" cx="50" cy="50" r="20"></circle>
       </svg>
     </div>
@@ -17,21 +18,22 @@
   .loader-path {
     fill: none;
     stroke-width: 1px;
-    animation: animate-stroke 3s ease-in-out;
-    stroke-linecap: round;
+    animation: animate-stroke 4s linear;
   }
   .circleLoading {
-    @apply w-[350px] h-[350px] mx-auto;
+    @apply w-[550px] h-[550px] mx-auto;
   }
   @keyframes animate-stroke {
       0% {
           stroke-dasharray: 200, 200;
           stroke-dashoffset: 0;
+          stroke-width: 1px;
           stroke: black;
       }
       100% {
           stroke-dasharray: 200, 200;
           stroke-dashoffset: -200;
+          stroke-width: 1px;
           stroke: white;
       }
   }

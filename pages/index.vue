@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white" style="height:200vh;">
+  <section class="bg-black" style="height:200vh;">
   </section>
 </template>
 

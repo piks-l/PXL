@@ -29,8 +29,11 @@ export default {
     ...mapActions({
         actMenu: 'actMenu', 
     }),
+    appearMenuIcons() {
+      this.$gsap.from("menu", {delay: 3, duration:0.5, opacity:0,  ease:"power2.linear"});
+    },
     revealMenuIcons() {
-      let tl = this.$gsap.timeline({delay: 0.5});
+      let tl = this.$gsap.timeline({delay: 3.5});
       tl.from('.nav-btn__svg rect', {
           scale: 0,
           transformOrigin: "center right",
@@ -67,6 +70,7 @@ export default {
     }
   },
   mounted() {
+    this.appearMenuIcons();
     this.revealMenuIcons();
     this.hoverMenuIcons();
   }
