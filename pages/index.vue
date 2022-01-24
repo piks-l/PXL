@@ -12,15 +12,8 @@
 
     },
     methods: {
-      scrolltoID() {
-        let btn = document.querySelector('footer');
-        btn.addEventListener("click", () => {
-          this.$gsap.to(window, {duration: 1, scrollTo:{y:"0", offsetY:y}});
-        });
-      }
     },
     mounted() {
-      this.scrolltoID();
     }
   }
 </script>
