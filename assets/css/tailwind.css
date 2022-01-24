@@ -7,7 +7,7 @@
     @apply box-border m-0;
 }
 html {
-    @apply scrollbar-thin scrollbar-thumb-white scrollbar-track-black overflow-y-auto text-sm box-border bg-white; 
+    @apply scrollbar-thin scrollbar-thumb-white scrollbar-track-black overflow-y-auto text-sm box-border bg-black; 
 }
 
 @layer components {
