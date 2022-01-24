@@ -31,8 +31,7 @@ export default {
           console.log('top = ', document.documentElement.scrollTop , '/', limitBottom)
           GSAP.to('header', {height: "50vh", duration: 1, delay:0 ,ease: 'power2'})
           GSAP.to('.logo', {left: "0%", x: "0%", duration: 1, delay:0 , transformOrigin:"0% 100%" , ease: 'power2'})
-        }
-        if(document.documentElement.scrollTop > 50 && document.documentElement.scrollTop < (limitBottom - 50) ){
+        } else if (document.documentElement.scrollTop > 50 && document.documentElement.scrollTop < (limitBottom - 50) ){
           console.log('mid = ', document.documentElement.scrollTop , '/', limitBottom)
           GSAP.to('header', {height: "100px", duration: 1, delay:0 ,ease: 'power2'})
           GSAP.to('.logo', {left: "-50%", x: "50%", duration: 1, delay:0 , transformOrigin:"0% 100%" , ease: 'power2'})
