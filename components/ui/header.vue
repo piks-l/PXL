@@ -1,57 +1,62 @@
 <template>
-  <header>
+  <header class="headerDemi headerFull Noise">
     <Ui-logo class="logo-theme" />
     <Ui-menu class="menu-theme" />
   </header>
 </template>
 <style lang="postcss">
   header{
-     @apply bg-black fixed top-0 left-0 w-screen h-screen flex justify-center items-center px-20 overflow-hidden border-b-[1px] border-white z-[100];
+     @apply bg-black fixed top-0 left-0 w-screen h-screen flex justify-center items-center px-20 overflow-hidden border-b-[1px] border-white z-[100] transform transition-all duration-1000;
   }
   .logo-theme{
-     @apply text-white relative ;
+     @apply text-white relative left-0 translate-x-0 transform transition-all duration-1000 font-garamond leading-[100px];
   }
   .menu-theme{
-     @apply text-white absolute ;
+     @apply text-white absolute right-[5rem];
   }
 
-  .menu-theme {
-    right: 5rem;
+  .headerMini{
+    height:100px!important;
+  }
+  .headerDemi{
+    height:50vh;
+  }
+  .headerFull{
+    height:100vh;
+  }
+  .logoMini{
+    left: -50%!important;
+    transform:translateX(50%)!important;
   }
 </style>
 <script>
 export default {
   methods: {
-    scrollHeader() {
-      let limitBottom = document.documentElement.offsetHeight - window.innerHeight;
-      let GSAP = this.$gsap;
+    animateOnScroll() {
+      let realHeight = (window.innerHeight / 2) - 100;
+      let calc = 'bottom-='+realHeight+' bottom'
+      this.$ScrollTrigger.create({start: 'top top', end: calc, markers: false, toggleClass: {className: 'headerMini', targets: 'header'}});
+      this.$ScrollTrigger.create({start: 'top top', end: calc, markers: false, toggleClass: {className: 'logoMini', targets: '.logo-theme'}});
 
+      this.$ScrollTrigger.addEventListener("scrollStart", () => console.log("scrolling started!"));
+      this.$ScrollTrigger.addEventListener("scrollEnd", () => console.log("scrolling ended!"));   
+    },
+    scrollHeader() {
+      let body = document.body, html = document.documentElement;
+      let limitBottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
       window.addEventListener("scroll",function(){
         if(document.documentElement.scrollTop === 0){
-          console.log('top = ', document.documentElement.scrollTop , '/', limitBottom)
-          GSAP.to('header', {height: "50vh", duration: 1, delay:0 ,ease: 'power2'})
-          GSAP.to('.logo', {left: "0%", x: "0%", duration: 1, delay:0 , transformOrigin:"0% 100%" , ease: 'power2'})
-        } else if (document.documentElement.scrollTop > 50 && document.documentElement.scrollTop < (limitBottom - 50) ){
-          console.log('mid = ', document.documentElement.scrollTop , '/', limitBottom)
-          GSAP.to('header', {height: "100px", duration: 1, delay:0 ,ease: 'power2'})
-          GSAP.to('.logo', {left: "-50%", x: "50%", duration: 1, delay:0 , transformOrigin:"0% 100%" , ease: 'power2'})
-        }
-        if(document.documentElement.scrollTop === limitBottom){
-          console.log('bot = ', document.documentElement.scrollTop , '/', limitBottom)
-          GSAP.to('header', {height: "0vh", duration: 1, delay:0, ease: 'power2'})
+          console.log('Top = ', document.documentElement.scrollTop , '/', limitBottom)
+        } else {
+          console.log('Scroll = ', document.documentElement.scrollTop , '/', limitBottom)
         }
       })
-
     },
   },
   mounted() {
-    this.scrollHeader();
-    
-    if(this.$store.state.preloading === false) {
-      //console.log("Page not loaded")
-    } else {
-      //console.log("Page loaded")
-    }
+
+    this.scrollHeader(); 
+    this.animateOnScroll();
   }
 }
 </script>

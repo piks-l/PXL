@@ -1,0 +1,18 @@
+.Noise {
+  animation: 5s fadeIn;
+  height: 100%;
+  width: 100%;
+  will-change: transform;
+  filter:saturate(0);
+}
+.Noise::after {
+  animation: grain 8s steps(10) infinite;
+  background-image: url("~/assets/img/noise.jpg");
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.1;
+  position: fixed;
+  top: -110%;
+  width: 300%;
+}

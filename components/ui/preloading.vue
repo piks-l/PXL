@@ -13,7 +13,7 @@
 </template>
 <style lang="postcss">
   .preloader{
-     @apply z-[51] bg-[transparent] mx-auto fixed top-0 left-0 w-screen h-screen flex justify-between items-center px-20 overflow-hidden text-center;
+     @apply z-[101] bg-[transparent] mx-auto fixed top-0 left-0 w-screen h-screen flex justify-between items-center px-20 overflow-hidden text-center;
   }
   .loader-path {
     fill: none;
@@ -47,7 +47,8 @@ export default {
   methods: {
     revealHeader() {
       console.log("revealHeader")
-      this.$gsap.to('header', {height: "50vh", duration: 1, delay:1 ,ease: 'power2'})
+      var header = document.querySelector("header");
+      header.classList.toggle("headerFull");
     },
     start() {
         this.toggle();

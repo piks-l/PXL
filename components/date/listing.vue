@@ -1,5 +1,5 @@
 <template>
-  <section id="date" class="text-white">
+  <section id="date">
 	<!-- 2021 -->
  	<article class="past">
  		<div class="event">
@@ -710,19 +710,17 @@
 </template>
 <style lang="postcss">
   #date{
-     @apply bg-black;
+     @apply bg-black pt-[50vh] m-0 w-screen text-white relative transition-all duration-1000;
   }
-#date {
-  margin: 0 0;
-  width:100vw;
-  color: white;
-  position: relative;
-}
+  .pinnedDate{
+    padding-top:200px!important;
+  }
+
 #date article {
-  padding:1em .5em 1.5em 1em;
+  padding:5em;
+  border-bottom: 1px solid #101010;
 }
 #date article:hover {
-  padding:2em .5em 2em 1em;
   cursor:crosshair;
   color:gray;
   background-color: black;
@@ -731,11 +729,9 @@
   transition: .5s;
 }
 article .lineup {
-  display: none;
-}
-article:hover .lineup {
   display: inline-block;
 }
+
 
 .lineup {
   margin-left:17%;
