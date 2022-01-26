@@ -1,7 +1,7 @@
 <template>
   <main :class="{'isDesktop': this.$device.isDesktop, 'isMobile': this.$device.isMobile, 'isTablet': this.$device.isTablet,}">
     <Ui-header />
-    <Nuxt v-if="!this.$store.state.preloading" />
+    <Nuxt class="mt-[200px]" v-if="!this.$store.state.preloading" />
     <Ui-footer v-if="!this.$store.state.preloading" />
   </main>
 </template>

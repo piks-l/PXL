@@ -6,7 +6,7 @@
 </template>
 <style lang="postcss">
   header{
-     @apply bg-black fixed top-0 left-0 w-screen h-screen flex justify-center items-center px-20 overflow-hidden border-b-[1px] border-white;
+     @apply bg-black fixed top-0 left-0 w-screen h-screen flex justify-center items-center px-20 overflow-hidden border-b-[1px] border-white z-[100];
   }
   .logo-theme{
      @apply text-white relative ;

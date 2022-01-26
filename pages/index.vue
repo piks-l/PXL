@@ -1,5 +1,6 @@
 <template>
-  <section class="bg-black" style="height:200vh;">
+  <section class="bg-black">
+    <Date-listing />
   </section>
 </template>
 

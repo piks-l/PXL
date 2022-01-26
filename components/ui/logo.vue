@@ -5,7 +5,7 @@
 </template>
 <style lang="postcss">
   .logo {
-     @apply font-garamond leading-[100px] ;
+     @apply font-garamond leading-[100px];
   }
   .char {
     @apply text-[150px];
