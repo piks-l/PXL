@@ -12,7 +12,7 @@
 </template>
 <style lang="postcss">
   menu {
-     @apply bg-black px-0;
+     @apply px-0;
   }
   .menu {
      @apply text-white;

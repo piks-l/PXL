@@ -5,7 +5,7 @@
   will-change: transform;
   filter:saturate(0);
 }
-.Noise::after {
+.Noise::before {
   animation: grain 8s steps(10) infinite;
   background-image: url("~/assets/img/noise.jpg");
   content: "";

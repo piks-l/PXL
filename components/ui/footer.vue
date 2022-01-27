@@ -1,11 +1,11 @@
 <template>
-  <footer>
-    Im the footer
+  <footer class="Noise">
+    <p>Im the footer</p>
   </footer>
 </template>
 <style lang="postcss">
   footer{
-     @apply bg-white h-[50vh];
+     @apply h-[50vh] w-screen text-white flex align-middle items-center justify-center absolute overflow-hidden;
   }
 </style>
 <script>

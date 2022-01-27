@@ -9,7 +9,7 @@
      @apply bg-black fixed top-0 left-0 w-screen h-screen flex justify-center items-center px-20 overflow-hidden border-b-[1px] border-white z-[100] transform transition-all duration-1000;
   }
   .logo-theme{
-     @apply text-white relative left-0 translate-x-0 transform transition-all duration-1000 font-garamond leading-[100px];
+     @apply text-white relative left-0 translate-x-0 transform transition-all duration-1000 font-garamond leading-[100px] text-[25px];
   }
   .menu-theme{
      @apply text-white absolute right-[5rem];
@@ -28,6 +28,10 @@
     left: -50%!important;
     transform:translateX(50%)!important;
   }
+  .logoMini .char{
+    font-size:25px!important;
+  }
+
 </style>
 <script>
 export default {
@@ -46,9 +50,9 @@ export default {
       let limitBottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
       window.addEventListener("scroll",function(){
         if(document.documentElement.scrollTop === 0){
-          console.log('Top = ', document.documentElement.scrollTop , '/', limitBottom)
+          //console.log('Top = ', document.documentElement.scrollTop , '/', limitBottom)
         } else {
-          console.log('Scroll = ', document.documentElement.scrollTop , '/', limitBottom)
+          //console.log('Scroll = ', document.documentElement.scrollTop , '/', limitBottom)
         }
       })
     },
