@@ -3,11 +3,11 @@
     <svg class="lightEffect" width="100vw" height="50vw" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <filter id="light">
         <!-- blur the source image to make bump map less sharp -->
-        <feGaussianBlur stdDeviation="2" result="blurred"></feGaussianBlur>
+        <feGaussianBlur stdDeviation="8" result="blurred"></feGaussianBlur>
         <!-- create bump map based on alpha channel -->
         <feColorMatrix in="blurred" type="luminanceToAlpha" result="bumpMap"></feColorMatrix>
         <!-- use bump map for lighting filter -->
-        <feDiffuseLighting in="bumpMap" surfaceScale="1" result="light">
+        <feDiffuseLighting in="bumpMap" surfaceScale="3" result="light">
           <fePointLight x="50%" y="50%" z="30"></fePointLight>
         </feDiffuseLighting>
         <!-- compose the lighting result with source image using multiplication -->
