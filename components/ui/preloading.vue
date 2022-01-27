@@ -47,8 +47,7 @@ export default {
   methods: {
     revealHeader() {
       console.log("revealHeader")
-      var header = document.querySelector("header");
-      header.classList.toggle("headerFull");
+      this.$gsap.to("header", { height: '50vh', ease: 'power2.linear', duration: 1, delay: 0});
     },
     start() {
         this.toggle();
@@ -63,7 +62,7 @@ export default {
     },
     afterEnter() {
       // Aprés avoir lancer la function Enter()
-      this.$gsap.to("#circle", { y: -5, ease: 'power2.inOut', duration: 3, delay: .5});
+      this.$gsap.to("#circle", { y: -5, ease: 'power2.linear', duration: 3, delay: 0});
     },
     finish() {
         this.content = false; // Boolean du contenu = false

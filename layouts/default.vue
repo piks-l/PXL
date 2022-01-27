@@ -22,8 +22,12 @@
     methods: {
       enter() {
         console.log("Layout mounted !")
+        
       },
       scrollPosition() {
+        // Frmwrk
+        let GSAP = this.$gsap;
+        // Scroll
         let realHeight = (window.innerHeight / 2);
         let body = document.body, html = document.documentElement;
         let limitBottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
@@ -38,12 +42,21 @@
         window.addEventListener("scroll",function(){
           if(html.scrollTop === 0){
             console.log('Scroll 🔝')
+            GSAP.to('header', {height: "50vh", duration: 0.2, delay:0 , ease: 'power2.linear'});
+            GSAP.to('.logo-theme', {left: "0%", x: '0%', duration: 0.2, delay:0 , ease: 'power2.linear'});
+            GSAP.to('.logo-theme .char', {fontSize: "100px", duration: 0.5, delay:0 , ease: 'power2.linear', stagger: 0.1});
           };
           if(html.scrollTop > 0 && html.scrollTop < limitScroll){
             console.log('Scroll = ', document.documentElement.scrollTop , '/', limitScroll)
+            GSAP.to('header', {height: "100px", duration: 0.2, delay:0 , ease: 'power2.linear'});
+            GSAP.to('.logo-theme', {left: "-50%", x: '50%', duration: 0.2, delay:0 , ease: 'power2.linear'});
+            GSAP.to('.logo-theme .char', {fontSize: "25px", duration: 0.5, delay:0  , ease: 'power2.linear', stagger: 0.1});
           };
           if(html.scrollTop > limitScroll){
             console.log('Scroll 🔚')
+            GSAP.to('header', {height: "50vh", duration: 0.2, delay:0 , ease: 'power2.linear'});
+            GSAP.to('.logo-theme', {left: "0%", x: '0%', duration: 0.2, delay:0 , ease: 'power2.linear'});
+            GSAP.to('.logo-theme .char', {fontSize: "100px",duration: 0.5, delay:0 , ease: 'power2.linear', stagger: 0.1});
           }
         })
       }

@@ -1,7 +1,7 @@
 <template>
   <menu>
-    <span class="menu" v-if="this.$store.state.menu === true" @click="actMenu()">CLOSE</span>
-    <span class="menu" v-else @click="actMenu()">
+    <span class="menu" v-if="this.$store.state.menu === true" @click="actMenu(),closeMenu()">CLOSE</span>
+    <span class="menu" v-else @click="actMenu(), openMenu()">
       <svg class="btn__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 30">
           <rect class="nav-rect" width="40" height="2" x="8" y="8" fill="#FFFFFF"/>
           <rect class="nav-rect" width="40" height="2" x="8" y="14" fill="#FFFFFF"/>
@@ -25,10 +25,22 @@
 <script>
 import {mapActions} from 'vuex'
 export default {
+  data() {
+    return {
+      height : '0px',
+    }
+  },
   methods: {
     ...mapActions({
         actMenu: 'actMenu', 
     }),
+    openMenu() {
+      this.height = document.querySelector('header').offsetHeight;
+      this.$gsap.to("header", {height:'100vh',delay: 0, duration:0.2, ease:"power2.linear"});
+    },
+    closeMenu() {
+      this.$gsap.to("header", {height:this.height+'px',delay: 0, duration:0.2, ease:"power2.linear"});
+    },
     appearMenuIcons() {
       this.$gsap.from("menu", {delay: 3, duration:0.5, opacity:0,  ease:"power2.linear"});
     },
