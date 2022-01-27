@@ -14,7 +14,6 @@
   .menu-theme{
      @apply text-white absolute right-[5rem];
   }
-
   .headerMini{
     height:100px!important;
   }
@@ -31,7 +30,6 @@
   .logoMini .char{
     font-size:25px!important;
   }
-
 </style>
 <script>
 export default {
@@ -39,27 +37,29 @@ export default {
     animateOnScroll() {
       let realHeight = (window.innerHeight / 2) - 100;
       let calc = 'bottom-='+realHeight+' bottom'
-      this.$ScrollTrigger.create({start: 'top top', end: calc, markers: false, toggleClass: {className: 'headerMini', targets: 'header'}});
-      this.$ScrollTrigger.create({start: 'top top', end: calc, markers: false, toggleClass: {className: 'logoMini', targets: '.logo-theme'}});
-
-      this.$ScrollTrigger.addEventListener("scrollStart", () => console.log("scrolling started!"));
-      this.$ScrollTrigger.addEventListener("scrollEnd", () => console.log("scrolling ended!"));   
-    },
-    scrollHeader() {
-      let body = document.body, html = document.documentElement;
-      let limitBottom = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
-      window.addEventListener("scroll",function(){
-        if(document.documentElement.scrollTop === 0){
-          //console.log('Top = ', document.documentElement.scrollTop , '/', limitBottom)
-        } else {
-          //console.log('Scroll = ', document.documentElement.scrollTop , '/', limitBottom)
+      // Header
+      this.$ScrollTrigger.create({
+        start: 'top top', 
+        end: calc, 
+        markers: false, 
+        toggleClass: {
+          className: 'headerMini', 
+          targets: 'header'
         }
-      })
+      });
+      // Logo
+      this.$ScrollTrigger.create({
+        start: 'top top', 
+        end: calc, 
+        markers: false, 
+        toggleClass: {
+          className: 'logoMini', 
+          targets: '.logo-theme'
+        }
+      });
     },
   },
   mounted() {
-
-    this.scrollHeader(); 
     this.animateOnScroll();
   }
 }

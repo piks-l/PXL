@@ -710,7 +710,7 @@
 </template>
 <style lang="postcss">
   #date{
-     @apply bg-black pt-[50vh] m-0 w-screen text-white relative transition-all duration-1000;
+     @apply  pt-[50vh] m-0 w-screen text-white relative transition-all duration-1000;
   }
   .pinnedDate{
     padding-top:200px!important;
@@ -723,7 +723,6 @@
 #date article:hover {
   cursor:crosshair;
   color:gray;
-  background-color: black;
 }
 #date article, #date article:hover {
   transition: .5s;
