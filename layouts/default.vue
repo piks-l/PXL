@@ -54,10 +54,9 @@
         this.$nuxt.$loading.start();
         setTimeout(() => {
           this.$nuxt.$loading.finish()
-                  this.enter();
-        this.scrollPosition();
         }, 2500);
-
+        this.enter();
+        this.scrollPosition();
       })
     }
   }
