@@ -17,6 +17,7 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=IM+Fell+English&display=swap' },
     ],
     script: [
+      { src: 'https://unpkg.com/three@0.136.0/build/three.min.js'}, 
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'},
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'},
       { src: 'https://unpkg.com/split-type'},

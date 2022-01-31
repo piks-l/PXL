@@ -2,15 +2,15 @@
     <svg class="lightEffect" width="500px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <filter id="light">
         <!-- blur the source image to make bump map less sharp -->
-        <feGaussianBlur stdDeviation="10" result="blurred"></feGaussianBlur>
+        <feGaussianBlur stdDeviation="3" result="blurred"></feGaussianBlur>
         <!-- Bum to alpha channel -->
         <feColorMatrix in="blurred" type="luminanceToAlpha" result="bumpMap"></feColorMatrix>
         <!-- Bumpmap lighting -->
-        <feDiffuseLighting in="bumpMap" surfaceScale="1" result="light">
-          <fePointLight x="0" y="0" z="20"></fePointLight>
+        <feDiffuseLighting in="bumpMap" surfaceScale="5" result="light">
+          <fePointLight x="50" y="50" z="20"></fePointLight>
         </feDiffuseLighting>
         <!-- compose the lighting result with source image using multiplication -->
-        <feComposite in="light" in2="SourceGraphic" operator="arithmetic" k1="0" k2="1" k3="0" k4="0"></feComposite>
+        <feComposite in="light" in2="SourceGraphic" operator="arithmetic" k1="1" k2="0" k3="0" k4="0"></feComposite>
       </filter>
       <pattern id="pattern1" width="100%" height="100%" patternUnits="userSpaceOnUse">
         <image xlink:href="https://f4.bcbits.com/img/a3120177049_10.jpg" width="100%"></image>
@@ -21,7 +21,7 @@
 <style lang="postcss">
 
   .lightEffect{
-    @apply fixed saturate-0 top-0 left-0 w-screen h-screen;
+    @apply relative w-screen h-screen;
   }
 
 </style>
@@ -29,15 +29,20 @@
 export default {
   methods: {
     initMouseEffect() {
-      // Effect
-      const svgNode = document.querySelector('.lightEffect');
-      const fePointLightNode = svgNode.querySelector('fePointLight');
-      svgNode.addEventListener('mousemove', handleMove);
-      svgNode.addEventListener('touchmove', handleMove);
-      function handleMove(event) {
-        fePointLightNode.setAttribute('x', event.clientX);
-        fePointLightNode.setAttribute('y', (event.clientY));
-      }
+      this.$gsap.to("fePointLight", {
+        attr: { 
+          x: window.innerWidth/2,
+          y: window.innerHeight/2
+        },
+        delay: 0, 
+        duration:0
+      });
+      this.$gsap.to("fePointLight",60, {
+        attr: { z: 100 },
+        repeat: -1,
+        yoyo: true
+      });
+
     },
   },
   mounted() {

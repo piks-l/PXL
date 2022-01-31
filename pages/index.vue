@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Date-listing />
+    <Projects-bumpEffect class="h-screen fixed top-0 left-0 w-screen"/>
+    <Date-listing class="pt-[100vh]" v-if="this.$store.state.preloading === false"/>
   </div>
 </template>
 

@@ -74,7 +74,7 @@
  	</article>
 	<!-- 2017 -->
 	<h4 class="text-left px-[5rem] w-full leading-20 text-black text-5xl font-garamond bg-white">2017</h4>
- 	<article class="past mb-[1000px]">
+ 	<article class="past">
  		<div class="event">
  			<div class="date">May 19, 2017</div>
  			<div class="city">Rotterdam <span class="country">NL</span></div>
@@ -97,7 +97,7 @@
   </section>
 </template>
 <style lang="postcss">
-	#date{ @apply pt-[50vh] m-0 w-full text-white relative transition-all duration-1000;}
+	#date{ @apply m-0 w-full text-white relative transition-all duration-1000;}
 	article{ @apply p-[5rem] bg-black border-b border-white;}
 	.past{ @apply opacity-70;}
 
