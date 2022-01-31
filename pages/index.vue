@@ -1,7 +1,7 @@
 <template>
-  <section >
+  <div>
     <Date-listing />
-  </section>
+  </div>
 </template>
 
 <script>
