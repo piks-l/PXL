@@ -1,6 +1,6 @@
 <template>
   <menu>
-    <span class="menu" v-if="this.$store.state.menu === true" @click="actMenu(),closeMenu()">CLOSE</span>
+    <span class="menu" v-if="this.$store.state.menu === true" @click="actMenu(), closeMenu()">X</span>
     <span class="menu" v-else @click="actMenu(), openMenu()">
       <svg class="btn__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 30">
           <rect class="nav-rect" width="40" height="2" x="8" y="8" fill="#FFFFFF"/>
@@ -21,13 +21,14 @@
       width: 56px;
       pointer-events: none
   }
+  
 </style>
 <script>
 import {mapActions} from 'vuex'
 export default {
   data() {
     return {
-      height : '0px',
+      height : '0',
     }
   },
   methods: {
@@ -37,9 +38,21 @@ export default {
     openMenu() {
       this.height = document.querySelector('header').offsetHeight;
       this.$gsap.to("header", {height:'100vh',delay: 0, duration:0.2, ease:"power2.linear"});
+      var t1 = this.$gsap.timeline();
+      if(this.height > 100) {
+        t1.to('.logo-theme', {left: "-50%", x: '50%', duration: 0, delay:0 , ease: 'power2.easeOut'})
+        .to('.logo-theme .char', {fontSize: "25px", duration: 0.1, delay:0  , ease: 'power2.easeOut', stagger: 0.1});
+      }
+      document.querySelector('html').classList.toggle("overflow-hidden")
     },
     closeMenu() {
       this.$gsap.to("header", {height:this.height+'px',delay: 0, duration:0.2, ease:"power2.linear"});
+      var t2 = this.$gsap.timeline();
+      if(this.height > 100) {
+        t2.to('.logo-theme', {left: "0%", x: '0%', duration: 0, delay:0 , ease: 'power2.easeOut'})
+        .to('.logo-theme .char', {fontSize: "100px", duration: 0.1, delay:0 , ease: 'power2.easeOut', stagger: 0.1});
+      }
+      document.querySelector('html').classList.toggle("overflow-hidden")
     },
     appearMenuIcons() {
       this.$gsap.from("menu", {delay: 3, duration:0.5, opacity:0,  ease:"power2.linear"});

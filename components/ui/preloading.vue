@@ -62,7 +62,7 @@ export default {
     },
     afterEnter() {
       // Aprés avoir lancer la function Enter()
-      this.$gsap.to("#circle", { y: -5, ease: 'power2.linear', duration: 3, delay: 0});
+      this.$gsap.to("#circle", { y: -5, ease: 'power2.linear', duration: 2, delay: 0});
     },
     finish() {
         this.content = false; // Boolean du contenu = false
