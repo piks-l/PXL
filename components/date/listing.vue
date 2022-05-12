@@ -1,7 +1,7 @@
 <template>
   <section id="date">
 	<!-- 2021 -->
-	<h4 class="text-left px-[5rem] w-full leading-20 text-black text-5xl font-garamond bg-white">2021</h4>
+	<h4 class="text-left px-[5rem] w-full leading-20 text-black text-5xl font-aliseo bg-white">2021</h4>
  	<article class="past">
  		<div class="event">
  			<div class="date">Dec. 5, 2021</div>
@@ -73,7 +73,7 @@
  		</div>
  	</article>
 	<!-- 2017 -->
-	<h4 class="text-left px-[5rem] w-full leading-20 text-black text-5xl font-garamond bg-white">2017</h4>
+	<h4 class="text-left px-[5rem] w-full leading-20 text-black text-5xl font-aliseo bg-white">2017</h4>
  	<article class="past">
  		<div class="event">
  			<div class="date">May 19, 2017</div>
@@ -101,14 +101,14 @@
 	article{ @apply p-[5rem] bg-black border-b border-white;}
 	.past{ @apply opacity-70;}
 
-	.event{ @apply flex justify-between w-full items-end h-[100px] font-garamond;}
+	.event{ @apply flex justify-between w-full items-end h-[100px] font-aliseo;}
 		.date{ @apply w-1/4 text-left text-4xl;}
-		.city{ @apply font-english text-[50px] leading-[100%];}
+		.city{ @apply font-aktura text-[50px] leading-[100%];}
 			.country{ @apply text-lg;}
-		.venue{ @apply w-1/4 text-right text-[30px] font-english leading-10 hover:opacity-50 cursor-pointer;}
+		.venue{ @apply w-1/4 text-right text-[30px] font-aktura leading-10 hover:opacity-50 cursor-pointer;}
 			.party{ @apply text-2xl block  hover:line-through  cursor-pointer;}
 
-	.lineup{ @apply flex justify-between w-full items-baseline h-[100px] font-garamond;}
+	.lineup{ @apply flex justify-between w-full items-baseline h-[100px] font-aliseo;}
 		.additional{ @apply w-1/4 text-left;}
 		.with{ @apply text-lg leading-5 text-center;}
 		.with span{ @apply block;}

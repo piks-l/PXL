@@ -3,7 +3,7 @@
     <Ui-logo class="logo-theme" />
     <transition name="fade" mode="in-out" v-on:before-leave="beforeLeave()" v-on:after-enter="afterEnter()">
       <div v-if="this.$store.state.menu" class="absolute">
-        <ul v-show="content" class=" text-5xl text-center font-english">
+        <ul v-show="content" class=" text-5xl text-center font-aliseo">
             <li class="mb-5 text-white menu-link" >
               <NuxtLink to="/">DATE</NuxtLink>
             </li>
@@ -23,7 +23,7 @@
      @apply fixed top-0 left-0 w-full h-screen flex justify-center items-center px-20 overflow-hidden border-b-[1px] border-white z-[100] transform transition-all duration-1000;
   }
   .logo-theme{
-     @apply text-white relative left-0 translate-x-0 transform transition-all duration-1000 font-garamond leading-[100px] text-[25px];
+     @apply text-white relative left-0 translate-x-0 transform transition-all duration-1000 font-aktura leading-[100px] text-[25px];
   }
   .menu-theme{
      @apply text-white absolute right-[5rem];

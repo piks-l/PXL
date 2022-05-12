@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink to="/">Saåad</NuxtLink>
+    <NuxtLink to="/" class="font-aktura">piks-l</NuxtLink>
 </template>
 <style lang="postcss">
 .logo-theme .char {

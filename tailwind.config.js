@@ -41,6 +41,7 @@ module.exports = {
     colors: {
       black: colors.black,
       white: colors.white,
+      yellow: colors.yellow,
       transparent: 'transparent',
       current: 'currentColor',
     },
@@ -75,8 +76,8 @@ module.exports = {
         '5000': '5000ms',
       },
       fontFamily: {
-        'garamond': ['"EB Garamond"'],
-        'english': ['"IM Fell English"'],
+        'aliseo': ['"ALISEO"'],
+        'aktura': ['"AKTURA"'],
       }
     }
   },

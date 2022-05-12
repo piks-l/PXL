@@ -2,7 +2,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   ssr: true,
   head: {
-    title: 'Saåad',
+    title: 'PIKS-L',
     htmlAttrs: {
       lang: 'en'
     },
@@ -72,7 +72,7 @@ export default {
     '@nuxtjs/sitemap',
   ],
   sitemap: {
-    hostname: 'https://www.saaadrone.com/',
+    hostname: 'https://www.piks-l.fr/',
     gzip: true,
     //routes: [
       //'/lieux',

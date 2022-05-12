@@ -10,6 +10,29 @@ html {
     @apply scrollbar-thin scrollbar-thumb-white scrollbar-track-black overflow-y-auto text-sm box-border bg-black; 
 }
 
+@font-face {
+    font-family: "AKTURA";
+    src: url('~assets/fonts/AKTURA.woff') format('woff'),
+          url('~assets/fonts/AKTURA.woff2') format('woff2'),
+          url('~assets/fonts/AKTURA.eot'),
+          url('~assets/fonts/AKTURA.eot?#iefix') format('embedded-opentype'),
+          url('~assets/fonts/AKTURA.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+  font-family: "ALISEO";
+  src: url('~assets/fonts/ALISEO.woff') format('woff'),
+        url('~assets/fonts/ALISEO.woff2') format('woff2'),
+        url('~assets/fonts/ALISEO.eot'),
+        url('~assets/fonts/ALISEO.eot?#iefix') format('embedded-opentype'),
+        url('~assets/fonts/ALISEO.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer components {
     /* SCROLLBAR */
     .scrollbar-thumb-black {

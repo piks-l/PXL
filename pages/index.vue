@@ -14,7 +14,6 @@
     },
     methods: {
       animateOnScroll() {
-
       }
     },
     mounted() {
