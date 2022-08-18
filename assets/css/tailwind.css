@@ -7,7 +7,7 @@
     @apply box-border m-0;
 }
 html {
-    @apply scrollbar-thin scrollbar-thumb-white scrollbar-track-black overflow-y-auto text-sm box-border bg-black; 
+    @apply scrollbar-thin scrollbar-thumb-yellow scrollbar-track-black overflow-y-auto text-sm box-border bg-black; 
 }
 
 @font-face {
@@ -39,22 +39,22 @@ html {
         --scrollbar-thumb: #000000 !important;
         
     }
-    .scrollbar-thumb-white {
-        --scrollbar-thumb: #ffffff !important;
+    .scrollbar-thumb-yellow {
+        --scrollbar-thumb: #fff000 !important;
         
     }
     .scrollbar-track-black {
         --scrollbar-track: #000000 !important;
 
     }
-    .scrollbar-track-white {
-        --scrollbar-track: #ffffff!important;
+    .scrollbar-track-yellow {
+        --scrollbar-track: #fff000!important;
 
     }
     .scrollbar-thin {
         --scrollbar-track: initial;
         --scrollbar-thumb: initial;
-        scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+        scrollbar-color: #FFF000 #000000;
         overflow: overlay;
     }
     .scrollbar-thin.overflow-x-hidden {

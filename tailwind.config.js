@@ -41,32 +41,36 @@ module.exports = {
     colors: {
       black: colors.black,
       white: colors.white,
-      yellow: colors.yellow,
+      yellow: "#fff000",
       transparent: 'transparent',
       current: 'currentColor',
     },
     extend: {
       width: {
-        'wc': 'calc(100% - 100px)',
+        'pxl': 'calc(100vw - 10rem)',
       },
       height: {
-        'nn': 'calc(100vh - 100px)',
-        'cart': 'calc(100% - 50px)',        
+        'pxl': 'calc(100vh - 70px)',       
       },
       minHeight: {
-        'foot': 'calc(100vh - 50px)',
+        'pxl': 'calc(100vh - 70px)',
       },
       lineHeight: {
-      '20': '5.5rem',
+      'pxl': '5rem',
       },
       keyframes: {
+        verticalTextScrolling: {
+          '0%': { transform: 'translate3d(0, 0, 0)' },
+          'to': { transform: 'translate3d(0, -50%, 0)' },
+        },
         horizontalTextScrolling: {
           '0%': { transform: 'translate3d(0, 0, 0)' },
           'to': { transform: 'translate3d(-50%, 0, 0)' },
-        }
+        },
       },
       animation: {
-        horizontalTextScrolling: 'horizontalTextScrolling 60s linear infinite',
+        verticalTextScrolling: 'verticalTextScrolling 30s linear infinite',
+        horizontalTextScrolling: 'horizontalTextScrolling 30s linear infinite',
       },
       transitionDelay: {
         '0': '0ms',

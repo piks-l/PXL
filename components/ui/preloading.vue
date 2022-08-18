@@ -47,7 +47,7 @@ export default {
   methods: {
     revealHeader() {
       console.log("revealHeader")
-      this.$gsap.to("header", { height: '50vh', background:"black", ease: 'power2.linear', duration: 1, delay: 0});
+      this.$gsap.to("header", { height: '70px', background:"black", ease: 'power2.linear', duration: 1, delay: 0});
     },
     start() {
         this.toggle();
